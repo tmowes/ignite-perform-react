@@ -1,21 +1,19 @@
-import { Flex, Heading } from '@chakra-ui/react'
+import { Button, Flex, Text } from '@chakra-ui/react'
 
-import { ProductItem } from '../ProductItem'
 import { AddToWhishListProps } from './types'
 
-export const SearchResults = (props: AddToWhishListProps) => {
-  const { } = props
+export const AddToWhishList = (props: AddToWhishListProps) => {
+  const { onAddToWhishList, onRequestClose } = props
 
   return (
-    <Flex direction="column" align="center" maxW="1200px" mx="auto">
-      <Heading>{totalPrice}</Heading>
-      {results.map(product => (
-        <ProductItem
-          key={product.id}
-          product={product}
-          onAddToWhishList={onAddToWhishList}
-        />
-      ))}
+    <Flex align="center" maxW="1200px" mx="auto" bg="gray.700">
+      <Text>Deseja adicionar aos favoritos?</Text>
+      <Button colorScheme="red" onClick={onRequestClose}>
+        Não
+      </Button>
+      <Button colorScheme="green" onClick={onAddToWhishList}>
+        Sim
+      </Button>
     </Flex>
   )
 }

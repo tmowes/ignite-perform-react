@@ -1,1 +1,4 @@
-export type AddToWhishListProps = {}
+export type AddToWhishListProps = {
+  onAddToWhishList: () => void
+  onRequestClose: () => void
+}
